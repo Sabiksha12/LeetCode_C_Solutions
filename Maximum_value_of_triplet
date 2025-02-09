@@ -1,0 +1,17 @@
+long long maximumTripletValue(int* nums, int numSize) {
+    long long sum = INT_MIN;
+    for (long long int i = 0; i < numSize; i++) {
+        for (long long int j = i + 1; j < numSize; j++) {
+            for (long long int k = j + 1; k < numSize; k++) {
+                long long diff = (long long)(nums[i]-nums[j]);
+                long long product = diff * (nums[k]);
+                if (sum<product){
+                    sum=product;
+                }
+                
+            }
+        }
+    }
+    return sum>0?sum:0;
+}
+
